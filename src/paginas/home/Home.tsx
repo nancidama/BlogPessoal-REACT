@@ -5,7 +5,7 @@ import './Home.css';
 function Home() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
+            <Grid container direction="row" justifyContent="center" alignItems="center" className='home2'>
                 
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
@@ -19,7 +19,7 @@ function Home() {
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    <img src="https://imgur.com/tdY7iJp.png" alt="" width="400px" height="600px" />
+                    
                 </Grid>
                 <Grid xs={12} className='postagens'>
                 </Grid>

@@ -1,3 +1,6 @@
+  .backcolor{
+    background: linear-gradient(36deg, #252525 30%, #747272 88%) !important ;
+  }
   .cursor{
     cursor: pointer;
     color:white
