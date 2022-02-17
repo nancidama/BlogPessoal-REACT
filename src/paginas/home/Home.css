@@ -1,11 +1,16 @@
-.titulo{
-    color:grey;
-    text-align: center;
+.caixa{
+    background-color: #D3D3D3;
 }
 
-.img{
-width: 800px;
-height: 800px;
-display: block;
-margin: 0 auto;
+.titulo{
+    color: grey11 !important; 
+    font-weight: bold !important;
+}
+.botao{
+    border-color: LightGrey !important;
+    background-color: #363636;
+    color: LightGrey !important;
+}
+.postagens{
+    background-color: black;
 }
