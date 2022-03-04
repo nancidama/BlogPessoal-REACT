@@ -8,10 +8,16 @@
 }
 
 .botao{
-    border-color: rgb(0, 0, 0) !important;
+    border-color: rgb(37, 36, 36) !important;
     background-color: #000000;
-    color: rgb(107, 105, 105) !important;
+    color: rgb(243, 236, 236) !important;
 }
 .postagens{
     background-color: rgb(24, 23, 23);
+}
+
+.marginLeft1{
+    color: #000000 !important;
+    background-color: rgb(209, 203, 203) !important;
+
 }

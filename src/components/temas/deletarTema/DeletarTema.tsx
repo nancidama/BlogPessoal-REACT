@@ -6,6 +6,7 @@ import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function DeletarTema() {
@@ -20,7 +21,16 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você preicsa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             history.push("/login")
         }
     }, [token])
@@ -47,7 +57,16 @@ function DeletarTema() {
                 'Authorization': token
             }
         })
-        alert('Tema deletado com sucesso');
+        toast.success('Tema deletado com sucesso', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
     }
 
     function nao() {
@@ -76,7 +95,7 @@ return (
                             </Button>
                         </Box>
                         <Box mx={2}>
-                            <Button onClick={nao} variant="contained" size='large' color="secondary">
+                            <Button onClick={nao} variant="contained" size='large' color="secondary" className='temas54'>
                                 Não
                             </Button>
                         </Box>

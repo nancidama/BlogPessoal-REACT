@@ -1,3 +1,8 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.deletartema{
+    color: rgb(253, 251, 251) !important;
+    background-color: #8d8b8b !important;
+}

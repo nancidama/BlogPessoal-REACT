@@ -3,6 +3,8 @@
 }
 
 .btnModal{
-    border-color: rgb(13, 13, 14) !important;
-    
+    border-color: rgb(112, 112, 112) !important;
+    background-color: #908c8c;
+    color: rgb(255, 248, 248) !important;
+
 }
