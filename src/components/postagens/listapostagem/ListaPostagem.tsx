@@ -10,7 +10,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 
 function ListaPostagem() {
-    const [posts, setPosts] = useState<Postagem[]>([])
+    const [post, setPost] = useState<Postagem[]>([])
     let history = useHistory();
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state)=> state.tokens
@@ -34,7 +34,7 @@ function ListaPostagem() {
     }, [token])
 
     async function getPost() {
-        await busca("/postagem", setPosts, {
+        await busca("/postagem", setPost, {
             headers: {
                 'Authorization': token
             }
@@ -45,12 +45,12 @@ function ListaPostagem() {
 
         getPost()
 
-    }, [posts.length])
+    }, [post.length])
 
     return (
         <>
             {
-                posts.map(post => (
+                post.map(post => (
                     <Box m={2} >
                         <Card variant="outlined">
                             <CardContent>

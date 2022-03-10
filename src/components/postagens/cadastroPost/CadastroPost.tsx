@@ -19,7 +19,7 @@ function CadastroPost() {
 
     useEffect(() => {
         if (token == "") {
-            toast.error('Você precisa estar logado', {
+            toast.error('Você precisa estar logado para continuar!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -36,6 +36,7 @@ function CadastroPost() {
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
+            tema:'',
             descricao: ''
         })
     const [postagem, setPostagem] = useState<Postagem>({
@@ -50,7 +51,7 @@ function CadastroPost() {
             ...postagem,
             tema: tema
         })
-    }, [tema])
+    }, [temas])
     
     useEffect(() => {
         getTemas()
@@ -60,7 +61,7 @@ function CadastroPost() {
     }, [id])        
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca(`/tema`, setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -94,7 +95,7 @@ function CadastroPost() {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem atualizada com sucesso', {
+            toast.success('Perfeito! Sua Postagem foi atualizada! ', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -110,7 +111,7 @@ function CadastroPost() {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem cadastrada com sucesso', {
+            toast.success('Postagem cadastrada com sucesso 🙃', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -132,7 +133,7 @@ function CadastroPost() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" > Cadastre sua postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 

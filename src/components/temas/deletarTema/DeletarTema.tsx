@@ -11,13 +11,11 @@ import { toast } from 'react-toastify';
 
 function DeletarTema() {
     let history = useHistory();
-    const { id } = useParams<{ id: string }>();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state)=> state.tokens
-    );    const [tema, setTema] = useState<Tema>({
-        id: 0,
-        descricao: ''
-    })
+    const { id } = useParams<{id: string}>();
+    const [temas, setTemas] = useState<Tema>()
+    const token = useSelector<TokenState, TokenState['tokens']>(
+      (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -42,7 +40,7 @@ function DeletarTema() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/tema/${id}`, setTema, {
+        buscaId(`/tema/${id}`, setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -51,7 +49,7 @@ function DeletarTema() {
     }
 
     function sim() {
-        history.push('/temas')
+        history.push('/tema')
         deleteId(`/tema/${id}`, {
             headers: {
                 'Authorization': token
@@ -83,7 +81,7 @@ return (
                             Deseja deletar o Tema?
                         </Typography>
                         <Typography color="textSecondary">
-                            {tema?.descricao}
+                            {temas?.descricao}
                         </Typography>
                     </Box>
                 </CardContent>
