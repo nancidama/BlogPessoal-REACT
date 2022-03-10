@@ -80,7 +80,7 @@ return (
                 <CardContent>
                     <Box justifyContent="center">
                         <Typography color="textSecondary" gutterBottom>
-                            Deseja deletar o Tema:
+                            Deseja deletar o Tema?
                         </Typography>
                         <Typography color="textSecondary">
                             {tema?.descricao}
